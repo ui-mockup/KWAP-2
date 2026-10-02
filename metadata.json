@@ -1,0 +1,6 @@
+{
+  "name": "KWAP - Your Retirement Companion",
+  "description": "Official corporate portal prototype for Kumpulan Wang Persaraan (Diperbadankan) - Malaysia's public service pension fund.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

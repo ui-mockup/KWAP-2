@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-primary: #10069F;
+    --brand-light: #6CACE4;
+    --brand-teal: #009CA6;
+    --brand-grey: #D0D3D4;
+    --brand-ink: #101820;
+    --brand-tint: #EAF3FB;
+    --brand-orange: #FFA400;
+    --brand-red: #BA0C2F;
+
+    --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-body: 'Google Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+    --font-scale: 1;
+  }
+
+  html {
+    font-size: calc(16px * var(--font-scale, 1));
+    scroll-behavior: smooth;
+    color: var(--brand-ink);
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 1.125rem; /* 18px body */
+    line-height: 1.6;
+    background-color: #FFFFFF;
+    color: #101820;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Accessibility Modes */
+body.font-scale-100 {
+  --font-scale: 1;
+}
+
+body.font-scale-125 {
+  --font-scale: 1.25;
+}
+
+body.font-scale-150 {
+  --font-scale: 1.5;
+}
+
+/* High Contrast Mode */
+body.high-contrast {
+  --brand-primary: #000080;
+  --brand-ink: #000000;
+  --brand-tint: #FFFFFF;
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+body.high-contrast a,
+body.high-contrast button {
+  text-decoration: underline !important;
+  font-weight: 700 !important;
+}
+
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea {
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+}
+
+/* Colour-Blind Mode: adds patterns, explicit indicators and underlines */
+body.colour-blind a {
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+}
+
+body.colour-blind [data-status="active"]::after {
+  content: " (Active)";
+  font-weight: 700;
+}
+
+body.colour-blind [data-status="pending"]::after {
+  content: " (Pending)";
+  font-weight: 700;
+}
+
+body.colour-blind .chart-bar-pattern {
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.15) 10px, rgba(0,0,0,0.15) 20px) !important;
+}
+
+/* Elderly-friendly Mode: larger touch targets, single/double column, no animations */
+body.elderly-mode {
+  --font-scale: 1.25;
+}
+
+body.elderly-mode * {
+  animation: none !important;
+  transition: none !important;
+}
+
+body.elderly-mode button,
+body.elderly-mode a,
+body.elderly-mode input,
+body.elderly-mode select {
+  min-height: 54px !important;
+  min-width: 54px !important;
+  font-size: 1.15rem !important;
+}
+
+/* Diamond watermark graphic device: horizontal only, opacity 5 to 12%, fading from top */
+.kwap-diamond-device {
+  background-image: radial-gradient(circle at 50% 0%, rgba(16, 6, 159, 0.09) 0%, rgba(16, 6, 159, 0.02) 65%, transparent 100%);
+}
+
+.kwap-diamond-pattern {
+  background-image: radial-gradient(#10069F 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+  opacity: 0.07;
+}
+
+/* Organic Tabung Haji style rounded mask */
+.organic-mask-1 {
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+}
+
+.organic-mask-2 {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+/* Focus styles meeting 3px rule */
+:focus-visible {
+  outline: 3px solid #FFA400 !important;
+  outline-offset: 2px !important;
+}
+
+/* Hide scrollbar for clean horizontal snap scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* W3C Accessibility Plugin Custom Styles */
+body.a11y-dark-contrast {
+  background-color: #0b0f19 !important;
+  color: #f8fafc !important;
+}
+body.a11y-dark-contrast *:not(button):not(input):not(select):not(textarea):not(img):not(svg) {
+  background-color: transparent !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+body.a11y-light-contrast {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+body.a11y-light-contrast *:not(img):not(svg) {
+  background-color: transparent !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+body.a11y-highlight-links a {
+  outline: 2px dashed #f59e0b !important;
+  outline-offset: 2px !important;
+  text-decoration: underline !important;
+  background-color: rgba(254, 240, 138, 0.2) !important;
+}
+
+body.a11y-highlight-headings h1,
+body.a11y-highlight-headings h2,
+body.a11y-highlight-headings h3,
+body.a11y-highlight-headings h4,
+body.a11y-highlight-headings h5,
+body.a11y-highlight-headings h6 {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 2px !important;
+  background-color: rgba(191, 219, 254, 0.25) !important;
+}
+
